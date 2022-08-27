@@ -20,6 +20,7 @@ def send_message():
     while True:
         try:
             msg = str(input("\033[01;32m[SERVIDOR]: \033[0m"))
+            session.send(bytes(" ", encoding="utf-8"))
             session.send(bytes("[SERVIDOR]:" + msg, encoding="utf-8"))
         except:
             print("\033[01;31mErro ao enviar pacote!!\033[0m")
