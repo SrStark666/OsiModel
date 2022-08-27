@@ -20,6 +20,7 @@ def send_message():
     while True:
         try:
             msg = str(input(f"\033[01;32m[{nome}]: \033[0m"))
+            tcp.send(bytes(" ", encoding="utf-8"))
             msg = (f"[{nome}]:" + msg)
             tcp.send(bytes(msg, encoding="utf-8"))
         except:
